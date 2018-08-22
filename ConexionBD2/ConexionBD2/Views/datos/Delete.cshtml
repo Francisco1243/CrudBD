@@ -1,0 +1,87 @@
+﻿@model ConexionBD2.Models.datosPersonales
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Eliminar registro</div>
+                <div class="panel-body">
+                    <center><font color="green"><h4>Deseas eliminar este registro?</h4></font></center>
+                    <div>
+                        <center><font color="red"><h5>Datos personales</h5></font></center>
+                        <hr />
+                        @*<dl class="dl-horizontal">*@
+                        <table class="table table-bordered">
+                            <tr>
+                                <th scope="col">
+                                    @Html.DisplayNameFor(model => model.Nombre)
+                                </th>
+
+                                <td scope="row">
+                                    @Html.DisplayFor(model => model.Nombre)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    @Html.DisplayNameFor(model => model.Apellido)
+                                </th>
+
+                                <td scope="row">
+                                    @Html.DisplayFor(model => model.Apellido)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    @Html.DisplayNameFor(model => model.Direccion)
+                                </th>
+
+                                <td scope="row">
+                                    @Html.DisplayFor(model => model.Direccion)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+
+                                <td scope="row">
+                                    @Html.DisplayFor(model => model.Email)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                    @Html.DisplayNameFor(model => model.Telefono)
+                                </th>
+
+                                <td scope="row">
+                                    @Html.DisplayFor(model => model.Telefono)
+                                </td>
+                            </tr>
+                        </table>
+                        @*</dl>*@
+
+                  @using (Html.BeginForm())
+    {
+                    @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Eliminar" class="btn btn-danger" />
+                            @Html.ActionLink("Ver lista de alumnos", "Index", "datos", null, new { @class = "btn btn-primary" })
+                        </div>
+                    @*<p>
+                        @Html.ActionLink("Ver lista de alumnos", "Index", "datos", null, new { @class = "btn btn-primary" })
+                    </p>*@
+    }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
